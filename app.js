@@ -15,7 +15,7 @@ const nunjucks = require('nunjucks');
 
 app.use(logger('dev'));
 
-app.set('view engine', 'html');
+app.set('view engine', 'html'); 
 app.engine('html', nunjucks.render);
 app.use('/', routes);
 nunjucks.configure('views', {noCache: true});

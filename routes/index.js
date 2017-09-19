@@ -10,16 +10,11 @@ router.get('/', (req, res) => {
 
 router.get('/users/:name', (req, res) => {
     let name = req.params.name;
-    let list = tweetBank.find( {name: name} )
-    res.render('index', {})
+    let tweets = tweetBank.find( {name: name} );
+    res.render('index', {tweets: tweets});
 })
 
-
-router.get('/stylesheets/style.css', (req, res) => {
-    res.sendFile('style.css');
-
-});
-
+router.get('/stylesheets/style.css', (req, res) => res.sendFile('style.css'));
 
 module.exports = router;
 
