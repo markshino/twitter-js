@@ -1,17 +1,51 @@
-const express = require('express');
-const app = express();
-const volleyball = require('volleyball')
+const routes = require('./routes');
+app.use('/', routes);
 
-app.listen(3000, function(){
-    console.log('server listening');
-});
 
-app.use(volleyball);
 
-app.get('/', (req, res) => {
-    res.send("<h1>Hello World</h1>");
-});
 
-app.get('/news',(req, res) => {
-    res.send("some bad news");
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const express = require('express');
+// const app = express();
+// const logger = require('morgan');
+// const nunjucks = require('nunjucks');
+
+// const locals = {
+//     title: 'An Example',
+//     people: [
+//         { name: 'Gandalf'},
+//         { name: 'Frodo' },
+//         { name: 'Hermione'}
+//     ]
+// };
+
+// app.use(logger('dev'));
+
+// app.set('view engine', 'html');
+// app.engine('html', nunjucks.render);
+
+// nunjucks.configure('views', {noCache: true});
+
+// app.get('/', (req, res) => {
+//     res.render('index.html', locals);
+// });
+
+// app.listen(3000, function(){
+//     console.log('server listening');
+// });
